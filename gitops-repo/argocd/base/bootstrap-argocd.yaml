@@ -30,8 +30,8 @@ spec:
       project: core-services
       source:
         path: "gitops-repo/argocd/{{values.cluster-type}}"
-        repoURL: https://github.com/kzap/platform-demo.git
+        repoURL: https://github.com/abangser/platform-demo.git
       syncPolicy:
         automated: {}
         syncOptions: # Sync options which modifies sync behavior
-        - CreateNamespace=true # Namespace Auto-Creation ensures that namespace specified as the application destination exists in the destination cluster.
+          - CreateNamespace=true # Namespace Auto-Creation ensures that namespace specified as the application destination exists in the destination cluster.
