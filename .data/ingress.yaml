@@ -1,0 +1,18 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: minio-ingress
+  namespace: kratix-platform-system
+spec:
+  ingressClassName: nginx
+  rules:
+    - host: minio.cnoe.localtest.me
+      http:
+        paths:
+          - backend:
+              service:
+                name: minio
+                port:
+                  number: 80
+            path: /
+            pathType: Prefix
